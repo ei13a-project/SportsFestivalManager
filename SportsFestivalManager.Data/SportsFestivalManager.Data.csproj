@@ -58,6 +58,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\SportsFestivalManager.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\SportsFestivalManager_log.ldf">
+      <DependentUpon>SportsFestivalManager.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SportsFestivalManager.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
