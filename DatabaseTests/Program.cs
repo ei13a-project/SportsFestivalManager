@@ -1,6 +1,7 @@
 ﻿using SportsFestivalManager.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace DatabaseTests
     {
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Environment.CurrentDirectory);
+
             using (var connection = new SportsFestivalManagerModel())
             {
                 try
