@@ -20,6 +20,7 @@ namespace SportsFestivalManager.Data
 
         public Category()
         {
+            CategoryId = Guid.NewGuid();
             Disciplines = new HashSet<Discipline>();
         }
     }

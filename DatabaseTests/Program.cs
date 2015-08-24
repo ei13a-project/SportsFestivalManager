@@ -24,12 +24,29 @@ namespace DatabaseTests
                     };
                     connection.Addresses.Add(address);
 
+                    var teacher = new Teacher()
+                    {
+                        Address = address,
+                        BirthDate = DateTime.Now,
+                        FirstName = "FirstName",
+                        LastName = "LastName"
+                    };
+                    connection.People.Add(teacher);
+
+                    var @class = new Class()
+                    {
+                        Name = "class",
+                        Teacher = teacher
+                    };
+                    connection.Classes.Add(@class);
+
                     var pupil = new Pupil()
                     {
                         Address = address,
                         FirstName = "Hans",
                         LastName = "Wurst",
                         BirthDate = DateTime.Now,
+                        Class = @class
                     };
                     connection.People.Add(pupil);
 

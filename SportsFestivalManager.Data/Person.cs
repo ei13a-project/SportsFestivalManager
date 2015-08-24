@@ -25,16 +25,30 @@ namespace SportsFestivalManager.Data
 
         [Column(TypeName = "date")]
         public DateTime BirthDate { get; set; }
+
+        [NotMapped]
+        public int Age
+        {
+            get
+            {
+                var today = DateTime.Today;
+                var age = today.Year - BirthDate.Year;
+                if (BirthDate > today.AddYears(-age))
+                    age--;
+                return age;
+            }
+        }
         
         public bool Active { get; set; }
 
         [ForeignKey("AddressId")]
         public Address Address { get; set; }
 
-        internal Guid AddressId { get; private set; }
+        public Guid AddressId { get; private set; }
 
         protected Person()
         {
+            PersonId = Guid.NewGuid();
             Active = true;
         }
     }

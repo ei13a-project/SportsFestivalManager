@@ -18,7 +18,12 @@ namespace SportsFestivalManager.Data
 
         [ForeignKey("TeacherId")]
         public Teacher Teacher { get; set; }
-        
-        internal Guid TeacherId { get; private set; }
+
+        public Guid TeacherId { get; private set; }
+
+        public Class()
+        {
+            ClassId = Guid.NewGuid();
+        }
     }
 }

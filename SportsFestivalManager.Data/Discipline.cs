@@ -23,18 +23,23 @@ namespace SportsFestivalManager.Data
         [Column("ValueType")]
         [Required]
         [StringLength(50)]
-        internal string ValueTypeString
+        internal string ValueTypeName
         {
-            get { return ValueType.ToString(); }
-            private set { ValueType = (DisciplineValueType)Enum.Parse(typeof(DisciplineValueType), value); }
+            get { return ValueTypeConverter.Name; }
+            private set { ValueTypeConverter = ValueTypeConverters.Instance.GetConverter(value); }
         }
 
         [NotMapped]
-        public DisciplineValueType ValueType { get; set; }
+        public IValueTypeConverter ValueTypeConverter { get; set; }
 
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
-        internal Guid CategoryId { get; private set; }
+        public Guid CategoryId { get; private set; }
+
+        public Discipline()
+        {
+            DisciplineId = Guid.NewGuid();
+        }
     }
 }
