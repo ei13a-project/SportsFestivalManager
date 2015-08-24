@@ -83,13 +83,6 @@
     <Content Include="bin\Debug\SportsFestivalManager_log.ldf">
       <DependentUpon>SportsFestivalManager.mdf</DependentUpon>
     </Content>
-    <Content Include="SportsFestivalManager - Kopieren.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SportsFestivalManager - Kopieren_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SportsFestivalManager - Kopieren.mdf</DependentUpon>
-    </Content>
     <Content Include="SportsFestivalManager.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
