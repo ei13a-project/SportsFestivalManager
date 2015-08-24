@@ -85,15 +85,6 @@
     <Compile Include="ValueTypeConverter\ValueTypeConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SportsFestivalManager.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SportsFestivalManager_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SportsFestivalManager.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
