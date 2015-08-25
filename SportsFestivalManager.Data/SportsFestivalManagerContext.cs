@@ -8,7 +8,7 @@ using System.Data.Entity.Core.EntityClient;
 namespace SportsFestivalManager.Data
 {
     [DbConfigurationType(typeof(SportsFestivalManagerDbConfiguration))]
-    public class SportsFestivalManagerModel : DbContext
+    public class SportsFestivalManagerContext : DbContext
     {
         public static string DefaultConnectionString
         {
@@ -24,24 +24,30 @@ namespace SportsFestivalManager.Data
             }
         }
 
-        public virtual DbSet<Address> Addresses { get; }
-        public virtual DbSet<Category> Categories { get; }
-        public virtual DbSet<Class> Classes { get; }
-        public virtual DbSet<Discipline> Disciplines { get; }
-        public virtual DbSet<Person> People { get; }
+        public virtual IDbSet<Address> Addresses { get; }
+        public virtual IDbSet<Category> Categories { get; }
+        public virtual IDbSet<Class> Classes { get; }
+        public virtual IDbSet<Discipline> Disciplines { get; }
+        public virtual IDbSet<Person> People { get; }
+        public virtual IDbSet<Achievement> Achievements { get; }
+        public virtual IDbSet<Festival> Festivals { get; }
 
-        public SportsFestivalManagerModel()
+        public SportsFestivalManagerContext()
             : this(DefaultConnectionString)
         {
         }
-        public SportsFestivalManagerModel(string connectionStringOrName)
+        public SportsFestivalManagerContext(string connectionStringOrName)
             : base(connectionStringOrName)
         {
+            Database.SetInitializer(new DropCreateDatabaseAlways<SportsFestivalManagerContext>());
+
             Addresses = Set<Address>();
             Categories = Set<Category>();
             Classes = Set<Class>();
             Disciplines = Set<Discipline>();
             People = Set<Person>();
+            Achievements = Set<Achievement>();
+            Festivals = Set<Festival>();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

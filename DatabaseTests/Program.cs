@@ -14,22 +14,18 @@ namespace DatabaseTests
         {
             AppDomain.CurrentDomain.SetData("DataDirectory", Environment.CurrentDirectory);
 
-            using (var connection = new SportsFestivalManagerModel())
+            using (var connection = new SportsFestivalManagerContext())
             {
                 try
                 {
-                    var address = new Address()
-                    {
-                        Location = "Location1",
-                        HouseNumber = "123",
-                        PostalCode = "123",
-                        Street = "Street1",
-                    };
-                    connection.Addresses.Add(address);
+                    var address1 = new Address("Location1", "123", "Street1", "123");
+                    connection.Addresses.Add(address1);
+                    var address2 = new Address("Location2", "321", "Street2", "321");
+                    connection.Addresses.Add(address2);
 
                     var teacher = new Teacher()
                     {
-                        Address = address,
+                        Address = address1,
                         BirthDate = DateTime.Now,
                         FirstName = "FirstName",
                         LastName = "LastName"
@@ -45,7 +41,7 @@ namespace DatabaseTests
 
                     var pupil = new Pupil()
                     {
-                        Address = address,
+                        Address = address1,
                         FirstName = "Hans",
                         LastName = "Wurst",
                         BirthDate = DateTime.Now,
@@ -60,14 +56,15 @@ namespace DatabaseTests
                     throw;
                 }
             }
-            using (var connection = new SportsFestivalManagerModel())
+            using (var connection = new SportsFestivalManagerContext())
             {
                 var addresses = connection.Addresses.ToArray();
-                var people = connection.People.ToArray();
                 var pupils = connection.People.OfType<Pupil>().ToArray();
                 var teacher = connection.People.OfType<Teacher>().ToArray();
                 var classes = connection.Classes.ToArray();
                 var disciplines = connection.Disciplines.ToArray();
+                var achievments = connection.Achievements.ToArray();
+                var festivals = connection.Festivals.ToArray();
             }
         }
     }

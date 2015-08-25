@@ -9,20 +9,18 @@ namespace SportsFestivalManager.Data
     [Table("Disciplines")]
     public class Discipline
     {
-        [Key]
-        public Guid DisciplineId { get; set; }
+        private Category _category;
 
-        [Required]
-        [StringLength(100)]
+        [Key, Column("DisciplineId")]
+        public Guid Id { get; set; }
+
+        [Required, StringLength(100), Index(IsUnique = true)]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required, StringLength(100)]
         public string Unit { get; set; }
         
-        [Column("ValueType")]
-        [Required]
-        [StringLength(50)]
+        [Column("ValueType"), Required, StringLength(50)]
         internal string ValueTypeName
         {
             get { return ValueTypeConverter.Name; }
@@ -32,14 +30,22 @@ namespace SportsFestivalManager.Data
         [NotMapped]
         public IValueTypeConverter ValueTypeConverter { get; set; }
 
-        [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        [ForeignKey(nameof(CategoryId))]
+        public Category Category
+        {
+            get { return _category; }
+            set
+            {
+                _category = value;
+                CategoryId = Category.Id;
+            }
+        }
 
         public Guid CategoryId { get; private set; }
 
         public Discipline()
         {
-            DisciplineId = Guid.NewGuid();
+            Id = Guid.NewGuid();
         }
     }
 }

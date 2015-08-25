@@ -9,21 +9,34 @@ namespace SportsFestivalManager.Data
     [Table("Classes")]
     public class Class
     {
-        [Key]
-        public Guid ClassId { get; set; }
+        private Teacher _teacher;
 
-        [Required]
-        [StringLength(100)]
+        [Key, Column("ClassId")]
+        public Guid Id { get; set; }
+
+        [Required, StringLength(100), Index(IsUnique = true)]
         public string Name { get; set; }
 
-        [ForeignKey("TeacherId")]
-        public Teacher Teacher { get; set; }
+        [ForeignKey(nameof(TeacherId))]
+        public Teacher Teacher
+        {
+            get { return _teacher; }
+            set
+            {
+                _teacher = value;
+                TeacherId = Teacher.Id;
+            }
+        }
 
         public Guid TeacherId { get; private set; }
 
+        public virtual ICollection<Pupil> Pupils { get; private set; }
+
         public Class()
         {
-            ClassId = Guid.NewGuid();
+            Id = Guid.NewGuid();
+
+            Pupils = new HashSet<Pupil>();
         }
     }
 }

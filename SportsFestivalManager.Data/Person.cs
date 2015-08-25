@@ -9,18 +9,18 @@ namespace SportsFestivalManager.Data
     [Table("People")]
     public abstract class Person
     {
-        [Key]
-        public Guid PersonId { get; set; }
+        private Address _address;
+
+        [Key, Column("PersonId")]
+        public Guid Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonNo { get; }
 
-        [Required]
-        [StringLength(100)]
+        [Required, StringLength(100)]
         public string FirstName { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required, StringLength(100)]
         public string LastName { get; set; }
 
         [Column(TypeName = "date")]
@@ -31,9 +31,8 @@ namespace SportsFestivalManager.Data
         {
             get
             {
-                var today = DateTime.Today;
-                var age = today.Year - BirthDate.Year;
-                if (BirthDate > today.AddYears(-age))
+                var age = DateTime.Today.Year - BirthDate.Year;
+                if (BirthDate > DateTime.Today.AddYears(-age))
                     age--;
                 return age;
             }
@@ -41,14 +40,22 @@ namespace SportsFestivalManager.Data
         
         public bool Active { get; set; }
 
-        [ForeignKey("AddressId")]
-        public Address Address { get; set; }
+        [ForeignKey(nameof(AddressId))]
+        public Address Address
+        {
+            get { return _address; }
+            set
+            {
+                _address = value;
+                AddressId = Address.Id;
+            }
+        }
 
         public Guid AddressId { get; private set; }
 
-        protected Person()
+        internal protected Person()
         {
-            PersonId = Guid.NewGuid();
+            Id = Guid.NewGuid();
             Active = true;
         }
     }

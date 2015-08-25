@@ -9,18 +9,17 @@ namespace SportsFestivalManager.Data
     [Table("Categories")]
     public class Category
     {
-        [Key]
-        public Guid CategoryId { get; set; }
+        [Key, Column("CategoryId")]
+        public Guid Id { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required, StringLength(100), Index(IsUnique = true)]
         public string Name { get; set; }
         
         public virtual ICollection<Discipline> Disciplines { get; }
 
         public Category()
         {
-            CategoryId = Guid.NewGuid();
+            Id = Guid.NewGuid();
             Disciplines = new HashSet<Discipline>();
         }
     }

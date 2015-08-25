@@ -9,9 +9,24 @@ namespace SportsFestivalManager.Data
     [Table("Pupils")]
     public class Pupil : Person
     {
-        [ForeignKey("ClassId")]
-        public Class Class { get; set; }
+        private Class _class;
+
+        [ForeignKey(nameof(ClassId))]
+        public Class Class
+        {
+            get { return _class; }
+            set
+            {
+                _class = value;
+                ClassId = Class.Id;
+            }
+        }
 
         public Guid ClassId { get; private set; }
+
+        public Pupil()
+        {
+
+        }
     }
 }
