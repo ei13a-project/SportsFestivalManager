@@ -115,6 +115,12 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SportsFestivalManager.Wpf\SportsFestivalManager.Wpf.csproj">
+      <Project>{7162f7f2-16c5-4778-b2f5-49c2786366e5}</Project>
+      <Name>SportsFestivalManager.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
