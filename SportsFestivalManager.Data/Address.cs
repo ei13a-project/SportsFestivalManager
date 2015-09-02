@@ -24,8 +24,6 @@ namespace SportsFestivalManager.Data
 
         [Required, StringLength(10)]
         public string HouseNumber { get; private set; }
-
-        public virtual ICollection<Person> People { get; private set; }
         
         public Address(string location, string postalCode, string street, string houseNumber)
             : this()
@@ -47,7 +45,6 @@ namespace SportsFestivalManager.Data
         private Address()
         {
             Id = Guid.NewGuid();
-            People = new HashSet<Person>();
         }
 
         public bool Equals(Address obj)
