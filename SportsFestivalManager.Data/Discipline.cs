@@ -10,7 +10,6 @@ namespace SportsFestivalManager.Data
     public class Discipline
     {
         private Category _category;
-        private IValueTypeConverter _valueTypeConverter;
 
         [Key, Column("DisciplineId")]
         public Guid Id { get; set; }
@@ -42,7 +41,7 @@ namespace SportsFestivalManager.Data
             }
         }
 
-        internal Guid CategoryId { get; private set; }
+        public Guid CategoryId { get; private set; }
 
         public Discipline()
         {

@@ -26,13 +26,13 @@ namespace SportsFestivalManager.Data
         private Pupil _pupil;
 
         [Key, Column(Order = 0)]
-        internal Guid FestivalId { get; private set; }
+        public Guid FestivalId { get; private set; }
 
         [Key, Column(Order = 1)]
-        internal Guid DisciplineId { get; private set; }
+        public Guid DisciplineId { get; private set; }
 
         [Key, Column(Order = 2)]
-        internal Guid PupilId { get; private set; }
+        public Guid PupilId { get; private set; }
         
         [ForeignKey(nameof(FestivalId))]
         public Festival Festival

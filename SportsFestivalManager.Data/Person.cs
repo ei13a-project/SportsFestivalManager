@@ -51,7 +51,7 @@ namespace SportsFestivalManager.Data
             }
         }
 
-        internal Guid AddressId { get; private set; }
+        public Guid AddressId { get; private set; }
 
         internal protected Person()
         {

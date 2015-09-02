@@ -22,7 +22,7 @@ namespace SportsFestivalManager.Data
             }
         }
 
-        internal Guid ClassId { get; private set; }
+        public Guid ClassId { get; private set; }
 
         public Pupil()
         {
