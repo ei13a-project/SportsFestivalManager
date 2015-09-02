@@ -10,6 +10,7 @@ namespace SportsFestivalManager.Data
     public class Discipline
     {
         private Category _category;
+        private IValueTypeConverter _valueTypeConverter;
 
         [Key, Column("DisciplineId")]
         public Guid Id { get; set; }
@@ -21,14 +22,14 @@ namespace SportsFestivalManager.Data
         public string Unit { get; set; }
         
         [Column("ValueType"), Required, StringLength(50)]
-        internal string ValueTypeName
-        {
-            get { return ValueTypeConverter.Name; }
-            private set { ValueTypeConverter = ValueTypeConverters.Instance.GetConverter(value); }
-        }
+        internal string ValueTypeName { get; private set; }
 
         [NotMapped]
-        public IValueTypeConverter ValueTypeConverter { get; set; }
+        public IValueTypeConverter ValueTypeConverter
+        {
+            get { return ValueTypeConverters.Instance.GetConverter(ValueTypeName); }
+            set { ValueTypeName = value.Name; }
+        }
 
         [ForeignKey(nameof(CategoryId))]
         public Category Category

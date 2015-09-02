@@ -68,7 +68,7 @@ namespace SportsFestivalManager.Data
         }
 
         [Column("Value")]
-        public string ValueString { get; private set; }
+        internal string ValueString { get; private set; }
 
         [NotMapped]
         public object Value
