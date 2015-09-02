@@ -28,7 +28,7 @@ namespace SportsFestivalManager.Data
             }
         }
 
-        public Guid TeacherId { get; private set; }
+        internal Guid TeacherId { get; private set; }
 
         public virtual ICollection<Pupil> Pupils { get; private set; }
 
