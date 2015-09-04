@@ -15,7 +15,7 @@ namespace SportsFestivalManager.Data
         public Guid Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PersonNo { get; }
+        public int PersonNo { get; set; }
 
         [Required, StringLength(100)]
         public string FirstName { get; set; }

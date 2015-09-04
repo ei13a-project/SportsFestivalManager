@@ -12,6 +12,11 @@ namespace SportsFestivalManager.Wpf
     {
         private Person _person;
 
+        public int PersonNo
+        {
+            get { return GetValue(() => PersonNo); }
+            set { SetValue(() => PersonNo, value); }
+        }
         public string FirstName
         {
             get { return GetValue(() => FirstName); }
@@ -80,6 +85,7 @@ namespace SportsFestivalManager.Wpf
 
             SaveCommand = new RelayCommand(Save, CanSave);
 
+            PersonNo = _person.PersonNo;
             FirstName = _person.FirstName;
             LastName = _person.LastName;
             BirthDate = _person.BirthDate;
@@ -93,6 +99,7 @@ namespace SportsFestivalManager.Wpf
 
         public virtual void Save()
         {
+            _person.PersonNo = PersonNo;
             _person.FirstName = FirstName;
             _person.LastName = LastName;
             _person.BirthDate = BirthDate;
