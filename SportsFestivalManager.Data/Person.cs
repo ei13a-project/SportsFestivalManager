@@ -58,6 +58,7 @@ namespace SportsFestivalManager.Data
         {
             Id = Guid.NewGuid();
             Active = true;
+            Gender = Gender.Female;
         }
     }
 }
