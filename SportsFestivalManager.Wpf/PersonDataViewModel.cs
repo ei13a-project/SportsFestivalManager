@@ -1,18 +1,17 @@
-﻿using System;
-using SportsFestivalManager;
-using SportsFestivalManager.Data;
-using System.Windows.Input;
-using System.Collections;
+﻿using SportsFestivalManager.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SportsFestivalManager.Wpf
 {
-    public class PersonEditorControlViewModel : ViewModel
+    public class PersonDataViewModel : ViewModel
     {
         private Person _person;
-        
+
         public string FirstName
         {
             get { return GetValue(() => FirstName); }
@@ -56,7 +55,7 @@ namespace SportsFestivalManager.Wpf
         public string GenderString
         {
             get { return GetValue(() => GenderString); }
-            set  { SetValue(() => GenderString, value); }
+            set { SetValue(() => GenderString, value); }
         }
         public int Age
         {
@@ -69,16 +68,20 @@ namespace SportsFestivalManager.Wpf
             }
         }
 
-        public PersonEditorControlViewModel(Person person)
+        public ICommand SaveCommand { get; }
+
+        public PersonDataViewModel(Person person)
         {
             if (person == null)
                 throw new ArgumentNullException(nameof(person));
             if (person.Address == null)
                 person.Address = new Address();
             _person = person;
+
+            SaveCommand = new RelayCommand(Save, CanSave);
         }
 
-        public void SaveButton()
+        public virtual void Save()
         {
             _person.FirstName = FirstName;
             _person.LastName = LastName;
@@ -91,7 +94,7 @@ namespace SportsFestivalManager.Wpf
             _person.Gender = StringToGender(GenderString);
         }
 
-        public bool CanSave()
+        public virtual bool CanSave()
         {
             return !string.IsNullOrWhiteSpace(FirstName)
                 && !string.IsNullOrWhiteSpace(LastName)
@@ -103,8 +106,8 @@ namespace SportsFestivalManager.Wpf
                 && !string.IsNullOrWhiteSpace(GenderString)
                 && (Age > 0 && Age < 100);
         }
-        
-        private Gender StringToGender(string genderString)
+
+        private static Gender StringToGender(string genderString)
         {
             bool gender = GenderString.Contains("Männlich");
             if (GenderString.Contains("Männlich"))

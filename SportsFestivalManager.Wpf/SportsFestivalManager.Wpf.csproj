@@ -56,12 +56,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridProperty.cs" />
-    <Compile Include="DataGridDoubleColumn.cs" />
-    <Compile Include="DataGridIntColumn.cs" />
+    <Compile Include="PeopleDataGrid\DataGridProperty.cs" />
+    <Compile Include="PeopleDataGrid\DataGridDoubleColumn.cs" />
+    <Compile Include="PeopleDataGrid\DataGridIntColumn.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="IView.cs" />
-    <Compile Include="PersonEditorControl.xaml.cs">
+    <Compile Include="PersonDataViewModel.cs" />
+    <Compile Include="PersonEditor\PersonEditorControl.xaml.cs">
       <DependentUpon>PersonEditorControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -77,16 +77,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PupilEditorViewModel.cs" />
-    <Compile Include="PupilsListControl.xaml.cs">
+    <Compile Include="TeacherDataViewModel.cs" />
+    <Compile Include="PupilDataViewModel.cs" />
+    <Compile Include="PeopleDataGrid\PupilsListControl.xaml.cs">
       <DependentUpon>PupilsListControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PupilsListViewModel.cs" />
+    <Compile Include="PeopleDataGrid\PupilsListViewModel.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="PupilEditor.xaml.cs">
+    <Compile Include="PersonEditor\PupilEditor.xaml.cs">
       <DependentUpon>PupilEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonEditorControlViewModel.cs" />
     <Compile Include="ViewModel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,11 +104,11 @@
     <Resource Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="PersonEditorControl.xaml">
+    <Page Include="PersonEditor\PersonEditorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PupilsListControl.xaml">
+    <Page Include="PeopleDataGrid\PupilsListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,7 +116,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PupilEditor.xaml">
+    <Page Include="PersonEditor\PupilEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +130,7 @@
       <Name>SportsFestivalManager.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -30,7 +30,7 @@ namespace SportsFestivalManager
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PupilEditor view = new PupilEditor();
-            view.DataContext = new PupilEditorViewModel(new Pupil());
+            view.DataContext = new PupilDataViewModel(new Pupil());
             view.ShowDialog();
         }
     }

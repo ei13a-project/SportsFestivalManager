@@ -19,14 +19,8 @@ namespace SportsFestivalManager.Wpf
     /// <summary>
     /// Interaktionslogik für PupilsListControl.xaml
     /// </summary>
-    public partial class PupilsListControl : UserControl, IView<PupilsListViewModel>
+    public partial class PupilsListControl : UserControl
     {
-        public PupilsListViewModel ViewModel
-        {
-            get { return DataContext as PupilsListViewModel; }
-            set { DataContext = value; }
-        }
-
         public PupilsListControl()
         {
             InitializeComponent();
@@ -47,7 +41,7 @@ namespace SportsFestivalManager.Wpf
                 };
             }
 
-            ViewModel = new PupilsListViewModel(pupils);
+            DataContext = new PupilsListViewModel(pupils);
         }
     }
 }

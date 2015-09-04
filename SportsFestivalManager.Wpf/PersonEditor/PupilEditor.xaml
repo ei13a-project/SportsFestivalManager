@@ -12,7 +12,7 @@
         >
     <StackPanel>
         <Label Content="Schülerdateneditor" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Bottom"/>
-        <local:PersonEditorControl DataContext="{Binding PersonViewModel}"/>
+        <local:PersonEditorControl />
         <Grid  Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
