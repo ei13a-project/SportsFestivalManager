@@ -79,6 +79,16 @@ namespace SportsFestivalManager.Wpf
             _person = person;
 
             SaveCommand = new RelayCommand(Save, CanSave);
+
+            FirstName = _person.FirstName;
+            LastName = _person.LastName;
+            BirthDate = _person.BirthDate;
+            Class = _person.Class;
+            Location = _person.Address.Location;
+            PostalCode = _person.Address.PostalCode;
+            Street = _person.Address.Street;
+            HouseNumber = _person.Address.HouseNumber;
+            GenderString = GenderToString(_person.Gender);
         }
 
         public virtual void Save()
@@ -93,7 +103,6 @@ namespace SportsFestivalManager.Wpf
             _person.Address.HouseNumber = HouseNumber;
             _person.Gender = StringToGender(GenderString);
         }
-
         public virtual bool CanSave()
         {
             return !string.IsNullOrWhiteSpace(FirstName)
@@ -109,13 +118,21 @@ namespace SportsFestivalManager.Wpf
 
         private static Gender StringToGender(string genderString)
         {
-            bool gender = genderString.Contains("Männlich");
-            if (genderString.Contains("Männlich"))
-                return Gender.Male;
-            else if (genderString.Contains("Weiblich"))
-                return Gender.Female;
-            else
-                throw new ArgumentException();
+            switch (genderString)
+            {
+                case "Männlich": return Gender.Male;
+                case "Weiblich": return Gender.Female;
+                default: throw new ArgumentException();
+            }
+        }
+        private static string GenderToString(Gender gender)
+        {
+            switch (gender)
+            {
+                case Gender.Male: return "Männlich";
+                case Gender.Female: return "Weiblich";
+                default: throw new ArgumentException();
+            }
         }
     }
 }
