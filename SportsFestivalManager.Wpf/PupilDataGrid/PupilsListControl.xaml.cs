@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SportsFestivalManager.Wpf
+namespace SportsFestivalManager.Wpf.PupilDataGrid
 {
     /// <summary>
     /// Interaktionslogik für PupilsListControl.xaml

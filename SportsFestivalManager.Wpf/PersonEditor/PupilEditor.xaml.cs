@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SportsFestivalManager.Wpf
+namespace SportsFestivalManager.Wpf.PersonEditor
 {
     public partial class PupilEditor : Window
     {

@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SportsFestivalManager.Wpf
+namespace SportsFestivalManager.Wpf.PersonEditor
 {
     public partial class PersonEditorControl : UserControl
     {
@@ -22,7 +22,7 @@ namespace SportsFestivalManager.Wpf
         {
             InitializeComponent();
             
-            DataContext = new PersonEditorControlViewModel(new Pupil());
+            DataContext = new PersonDataViewModel(new Pupil());
         }
     }
 }

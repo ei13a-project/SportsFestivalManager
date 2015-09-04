@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SportsFestivalManager.Wpf
+namespace SportsFestivalManager.Wpf.PupilDataGrid
 {
     public class PupilsListViewModel : ViewModel
     {

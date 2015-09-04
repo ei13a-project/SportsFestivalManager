@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace SportsFestivalManager.Wpf
+namespace SportsFestivalManager.Wpf.PupilDataGrid
 {
     public class DataGridDoubleColumn : DataGridTextColumn
     {

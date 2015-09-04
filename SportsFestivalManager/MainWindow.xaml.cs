@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SportsFestivalManager.Wpf;
 using SportsFestivalManager.Data;
+using SportsFestivalManager.Wpf.PersonEditor;
 
 namespace SportsFestivalManager
 {
