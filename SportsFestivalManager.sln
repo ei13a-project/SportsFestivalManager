@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTests", "DatabaseTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsFestivalManager.Wpf", "SportsFestivalManager.Wpf\SportsFestivalManager.Wpf.csproj", "{7162F7F2-16C5-4778-B2F5-49C2786366E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTest_Malte", "WpfTest_Malte\WpfTest_Malte.csproj", "{FB186554-18F6-46C6-9427-67A0A67E56C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTest_Andre", "WpfTest_Andre\WpfTest_Andre.csproj", "{CFDEFAD2-3402-4C33-A458-AFD1539AE19F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7162F7F2-16C5-4778-B2F5-49C2786366E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7162F7F2-16C5-4778-B2F5-49C2786366E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7162F7F2-16C5-4778-B2F5-49C2786366E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB186554-18F6-46C6-9427-67A0A67E56C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB186554-18F6-46C6-9427-67A0A67E56C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB186554-18F6-46C6-9427-67A0A67E56C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB186554-18F6-46C6-9427-67A0A67E56C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFDEFAD2-3402-4C33-A458-AFD1539AE19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDEFAD2-3402-4C33-A458-AFD1539AE19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDEFAD2-3402-4C33-A458-AFD1539AE19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDEFAD2-3402-4C33-A458-AFD1539AE19F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
