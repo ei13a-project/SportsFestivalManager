@@ -60,7 +60,6 @@
     <Compile Include="DataGridDoubleColumn.cs" />
     <Compile Include="DataGridIntColumn.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="GenderConverter.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="PersonEditorControl.xaml.cs">
       <DependentUpon>PersonEditorControl.xaml</DependentUpon>

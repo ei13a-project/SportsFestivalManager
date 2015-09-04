@@ -33,16 +33,19 @@
             <TextBlock Margin="10,5,10,5" Text="Geburtsdatum" Grid.Row="2" Grid.Column="0"/>
             <DatePicker Grid.Column="1" Grid.Row="2" SelectedDate="{Binding BirthDate}"/>
             <TextBlock Margin="10,5,10,5" Text="Stadt" Grid.Row="3" Grid.Column="0"/>
-            <TextBox Text="{Binding Location}" Grid.Row="3" Grid.Column="1"/>
+            <DockPanel Grid.Row="3" Grid.Column="1">
+                <TextBox Text="{Binding PostalCode}" Width="50"/>
+                <TextBox Text="{Binding Location}" Width="101"/>
+            </DockPanel>
             <TextBlock Margin="10,5,10,5" Text="Straße / Nr." Grid.Row="4" Grid.Column="0"/>
             <DockPanel Grid.Row="4" Grid.Column="1">
-                <TextBox Text="{Binding Street}" Width="95"/>
+                <TextBox Text="{Binding Street}" Width="120"/>
                 <TextBox Text="{Binding HouseNumber}" Width="30"/>
             </DockPanel>
             <TextBlock Margin="10,5,10,5" Text="Klasse" Grid.Row="6" Grid.Column="0"/>
             <TextBox Text="{Binding Class}" Grid.Row="6" Grid.Column="1" />
             <TextBlock Margin="10,5,10,5" Text="Geschlecht" Grid.Row="7" Grid.Column="0"/>
-            <ComboBox SelectedValue="{Binding Gender}" Grid.Row="7" Grid.Column="1">
+            <ComboBox SelectedValue="{Binding GenderString}" Grid.Row="7" Grid.Column="1">
                 <ComboBox.Items>
                     <ComboBoxItem Content="Männlich"/>
                     <ComboBoxItem Content="Weiblich"/>

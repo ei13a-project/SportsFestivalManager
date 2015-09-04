@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace SportsFestivalManager.Wpf
 {
@@ -72,6 +73,8 @@ namespace SportsFestivalManager.Wpf
         {
             if (person == null)
                 throw new ArgumentNullException(nameof(person));
+            if (person.Address == null)
+                person.Address = new Address();
             _person = person;
         }
 
@@ -97,17 +100,19 @@ namespace SportsFestivalManager.Wpf
                 && !string.IsNullOrWhiteSpace(PostalCode)
                 && !string.IsNullOrWhiteSpace(Street)
                 && !string.IsNullOrWhiteSpace(HouseNumber)
+                && !string.IsNullOrWhiteSpace(GenderString)
                 && (Age > 0 && Age < 100);
         }
         
         private Gender StringToGender(string genderString)
         {
-            switch (genderString)
-            {
-                case "Männlich": return Gender.Male;
-                case "Weiblich": return Gender.Female;
-                default: throw new ArgumentException();
-            }
+            bool gender = GenderString.Contains("Männlich");
+            if (GenderString.Contains("Männlich"))
+                return Gender.Male;
+            else if (GenderString.Contains("Weiblich"))
+                return Gender.Female;
+            else
+                throw new ArgumentException();
         }
     }
 }
