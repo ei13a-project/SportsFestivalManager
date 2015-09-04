@@ -26,7 +26,6 @@ namespace SportsFestivalManager.Data
 
         public virtual IDbSet<Address> Addresses { get; }
         public virtual IDbSet<Category> Categories { get; }
-        public virtual IDbSet<Class> Classes { get; }
         public virtual IDbSet<Discipline> Disciplines { get; }
         public virtual IDbSet<Person> People { get; }
         public virtual IDbSet<Achievement> Achievements { get; }
@@ -43,7 +42,6 @@ namespace SportsFestivalManager.Data
 
             Addresses = Set<Address>();
             Categories = Set<Category>();
-            Classes = Set<Class>();
             Disciplines = Set<Discipline>();
             People = Set<Person>();
             Achievements = Set<Achievement>();

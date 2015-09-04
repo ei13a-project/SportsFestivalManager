@@ -14,35 +14,18 @@ namespace SportsFestivalManager.Data
         public Guid Id { get; private set; }
 
         [Required, StringLength(100)]
-        public string Location { get; private set; }
+        public string Location { get; set; }
 
         [Required, StringLength(10)]
-        public string PostalCode { get; private set; }
+        public string PostalCode { get; set; }
 
         [Required, StringLength(100)]
-        public string Street { get; private set; }
+        public string Street { get; set; }
 
         [Required, StringLength(10)]
-        public string HouseNumber { get; private set; }
+        public string HouseNumber { get; set; }
         
-        public Address(string location, string postalCode, string street, string houseNumber)
-            : this()
-        {
-            if (string.IsNullOrWhiteSpace(location))
-                throw new ArgumentNullException(nameof(location));
-            if (string.IsNullOrWhiteSpace(postalCode))
-                throw new ArgumentNullException(nameof(postalCode));
-            if (string.IsNullOrWhiteSpace(street))
-                throw new ArgumentNullException(nameof(street));
-            if (string.IsNullOrWhiteSpace(houseNumber))
-                throw new ArgumentNullException(nameof(houseNumber));
-            
-            Location = location;
-            PostalCode = postalCode;
-            Street = street;
-            HouseNumber = houseNumber;
-        }
-        private Address()
+        public Address()
         {
             Id = Guid.NewGuid();
         }

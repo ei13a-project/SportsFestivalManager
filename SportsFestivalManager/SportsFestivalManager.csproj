@@ -116,6 +116,10 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SportsFestivalManager.Data\SportsFestivalManager.Data.csproj">
+      <Project>{62f9fcc2-6498-4a94-ae6c-2df4f25de0f9}</Project>
+      <Name>SportsFestivalManager.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SportsFestivalManager.Wpf\SportsFestivalManager.Wpf.csproj">
       <Project>{7162f7f2-16c5-4778-b2f5-49c2786366e5}</Project>
       <Name>SportsFestivalManager.Wpf</Name>

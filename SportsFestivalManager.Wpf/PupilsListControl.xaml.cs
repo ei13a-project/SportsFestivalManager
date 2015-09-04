@@ -31,9 +31,8 @@ namespace SportsFestivalManager.Wpf
         {
             InitializeComponent();
 
-            var address = new Address("Location", "123", "Street", "123");
+            var address = new Address { Location="Location", PostalCode="123", Street="Street", HouseNumber="123" };
             var teacher = new Teacher() { Address = address, BirthDate = DateTime.Now, FirstName = "FirstName", LastName = "LastName" };
-            var @class = new Class() { Name = "class", Teacher = teacher };
 
             var pupils = new Pupil[10];
             for (int i = 0; i < pupils.Length; i++)
@@ -44,7 +43,7 @@ namespace SportsFestivalManager.Wpf
                     FirstName = "Hans" + i.ToString(),
                     LastName = "Wurst" + i.ToString(),
                     BirthDate = DateTime.Now.Subtract(TimeSpan.FromDays(10 * 365)),
-                    Class = @class
+                    Class = "@"
                 };
             }
 

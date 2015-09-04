@@ -70,9 +70,9 @@
     <Compile Include="Achievement.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="Class.cs" />
     <Compile Include="Discipline.cs" />
     <Compile Include="Festival.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="ValueTypeConverter\ValueTypeConverters.cs" />
     <Compile Include="ValueTypeConverter\IValueTypeConverter.cs" />
     <Compile Include="Person.cs" />

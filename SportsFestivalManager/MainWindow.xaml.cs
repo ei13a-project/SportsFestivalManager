@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SportsFestivalManager.Wpf;
+using SportsFestivalManager.Data;
 
 namespace SportsFestivalManager
 {
@@ -23,6 +25,13 @@ namespace SportsFestivalManager
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PupilEditor view = new PupilEditor();
+            view.DataContext = new PupilEditorViewModel(new Pupil());
+            view.ShowDialog();
         }
     }
 }

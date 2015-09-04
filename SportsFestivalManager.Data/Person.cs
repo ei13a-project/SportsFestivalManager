@@ -26,16 +26,17 @@ namespace SportsFestivalManager.Data
         [Column(TypeName = "date")]
         public DateTime BirthDate { get; set; }
 
+        [Column("ClassName")]
+        public string Class { get; set; }
+
+        [Column("Gender"), Required, StringLength(10)]
+        internal string GenderString { get; private set; }
+
         [NotMapped]
-        public int Age
+        public Gender Gender
         {
-            get
-            {
-                var age = DateTime.Today.Year - BirthDate.Year;
-                if (BirthDate > DateTime.Today.AddYears(-age))
-                    age--;
-                return age;
-            }
+            get { return (Gender)Enum.Parse(typeof(Gender), GenderString); }
+            set { GenderString = value.ToString(); }
         }
         
         public bool Active { get; set; }

@@ -12,7 +12,7 @@ namespace DatabaseTests
     {
         static void Main(string[] args)
         {
-            AppDomain.CurrentDomain.SetData("DataDirectory", Environment.CurrentDirectory);
+            /*AppDomain.CurrentDomain.SetData("DataDirectory", Environment.CurrentDirectory);
 
             using (var connection = new SportsFestivalManagerContext())
             {
@@ -44,8 +44,7 @@ namespace DatabaseTests
                         Address = address1,
                         FirstName = "Hans",
                         LastName = "Wurst",
-                        BirthDate = DateTime.Now,
-                        Class = @class
+                        BirthDate = DateTime.Now
                     };
                     connection.People.Add(pupil);
 
@@ -65,7 +64,7 @@ namespace DatabaseTests
                 var disciplines = connection.Disciplines.ToArray();
                 var achievments = connection.Achievements.ToArray();
                 var festivals = connection.Festivals.ToArray();
-            }
+            }*/
         }
     }
 }
