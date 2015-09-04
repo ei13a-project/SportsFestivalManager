@@ -109,10 +109,10 @@ namespace SportsFestivalManager.Wpf
 
         private static Gender StringToGender(string genderString)
         {
-            bool gender = GenderString.Contains("Männlich");
-            if (GenderString.Contains("Männlich"))
+            bool gender = genderString.Contains("Männlich");
+            if (genderString.Contains("Männlich"))
                 return Gender.Male;
-            else if (GenderString.Contains("Weiblich"))
+            else if (genderString.Contains("Weiblich"))
                 return Gender.Female;
             else
                 throw new ArgumentException();

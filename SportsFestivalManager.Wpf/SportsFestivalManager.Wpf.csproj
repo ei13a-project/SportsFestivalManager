@@ -56,7 +56,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PeopleDataGrid\DataGridProperty.cs" />
     <Compile Include="PeopleDataGrid\DataGridDoubleColumn.cs" />
     <Compile Include="PeopleDataGrid\DataGridIntColumn.cs" />
     <Compile Include="Extensions.cs" />
